@@ -69,8 +69,8 @@ export default function Home() {
               <div className="relative w-full aspect-square flex items-center justify-center animate-float">
                  <div className="absolute inset-0 bg-primary/10 rounded-full blur-[80px]" />
                  <Image
-                    src="/avatar.png"
-                    alt="IA Core"
+                    src="/robo_hero.webp"
+                    alt="Assistente IA"
                     width={600}
                     height={600}
                     className="object-contain z-10 relative drop-shadow-[0_0_30px_rgba(104,226,47,0.3)]"
