@@ -21,86 +21,122 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col flex-1">
-      {/* 1. Hero Section */}
-      <section className="w-full py-16 md:py-32 bg-background relative overflow-hidden flex flex-1 items-center justify-center">
-        {/* Decorative background elements */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
+    <div className="flex flex-col flex-1 bg-background text-foreground overflow-x-hidden">
+      {/* 1. Hero Section - Futuristic & High Impact */}
+      <section className="w-full min-h-screen py-16 md:py-32 bg-grid relative overflow-hidden flex items-center justify-center border-b border-primary/20">
+        {/* Glow Effects */}
+        <div className="absolute top-[20%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-[80%] left-[20%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container px-4 md:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 text-center lg:text-left">
-              <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-4">
-                <Zap className="mr-2 h-4 w-4" />
-                <span>O Futuro da Produtividade Chegou</span>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+            {/* Left Content */}
+            <div className="space-y-10 text-center lg:text-left animate-fade-in-up">
+              <div className="inline-flex items-center rounded-full border border-primary/50 bg-primary/10 px-4 py-2 text-sm font-bold text-primary mb-2 shadow-[0_0_15px_rgba(104,226,47,0.2)]">
+                <Zap className="mr-2 h-5 w-5 text-primary" />
+                <span className="tracking-widest uppercase">O Futuro Chegou</span>
               </div>
-              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-foreground">
-                Automatize seu negócio com <span className="text-primary text-glow">Assistentes de IA</span>
+
+              <h1 className="text-5xl font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1]">
+                O PODER DA <br />
+                <span className="text-primary text-glow">INTELIGÊNCIA</span><br />
+                ARTIFICIAL
               </h1>
-              <p className="max-w-[600px] mx-auto lg:mx-0 text-lg text-muted-foreground md:text-xl">
-                Reduza custos, escale seu atendimento e aumente suas vendas em até 40% com agentes inteligentes de última geração que trabalham 24/7.
+
+              <p className="max-w-[600px] mx-auto lg:mx-0 text-xl text-muted-foreground font-medium md:text-2xl leading-relaxed">
+                Escale suas operações, reduza custos e venda no automático. A revolução dos negócios acontece <span className="text-white">agora</span>.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start">
-                <Button size="lg" className="w-full sm:w-auto font-bold text-primary-foreground text-md h-14 px-8" asChild>
-                  <Link href="#assistants">Ver Nossos Robôs</Link>
+              <div className="flex flex-col sm:flex-row gap-6 w-full justify-center lg:justify-start pt-4">
+                <Button size="lg" className="w-full sm:w-auto font-black text-primary-foreground text-lg h-16 px-10 rounded-full shadow-[0_0_20px_rgba(104,226,47,0.4)] hover:shadow-[0_0_30px_rgba(104,226,47,0.6)] hover:scale-105 transition-all duration-300" asChild>
+                  <Link href="#assistants">EXPLORAR ASSISTENTES</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold text-md h-14 px-8 border-primary/50 hover:bg-primary/10 hover:text-primary transition-all group" asChild>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto font-bold text-lg h-16 px-10 rounded-full border-primary/50 hover:bg-primary/20 hover:border-primary text-white transition-all duration-300 group" asChild>
                   <Link href="#contact">
-                    Falar com um Consultor
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    FALAR COM ESPECIALISTA
+                    <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />
                   </Link>
                 </Button>
               </div>
             </div>
-            <div className="mx-auto lg:ml-auto flex justify-center w-full max-w-[500px]">
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-border bg-card/50 shadow-2xl p-4 flex items-center justify-center">
-                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent opacity-50" />
+
+            {/* Right Image Content */}
+            <div className="mx-auto lg:ml-auto flex justify-center w-full max-w-[600px] relative">
+              <div className="relative w-full aspect-square flex items-center justify-center animate-float">
+                 <div className="absolute inset-0 bg-primary/10 rounded-full blur-[80px]" />
                  <Image
                     src="/avatar.png"
-                    alt="Assistente de IA Great Path"
-                    width={500}
-                    height={500}
-                    className="object-contain drop-shadow-2xl z-10 relative hover:scale-105 transition-transform duration-700"
+                    alt="IA Core"
+                    width={600}
+                    height={600}
+                    className="object-contain z-10 relative drop-shadow-[0_0_30px_rgba(104,226,47,0.3)]"
                  />
+
+                 {/* Floating UI Elements */}
+                 <div className="absolute -left-8 top-1/4 bg-card/80 backdrop-blur-md border border-primary/30 p-4 rounded-xl shadow-lg flex items-center gap-3 z-20">
+                    <Bot className="text-primary h-6 w-6" />
+                    <div>
+                      <p className="text-xs text-muted-foreground font-bold uppercase">Status</p>
+                      <p className="text-sm font-bold text-white">Online 24/7</p>
+                    </div>
+                 </div>
+
+                 <div className="absolute -right-4 bottom-1/4 bg-card/80 backdrop-blur-md border border-primary/30 p-4 rounded-xl shadow-lg flex items-center gap-3 z-20">
+                    <Zap className="text-primary h-6 w-6" />
+                    <div>
+                      <p className="text-xs text-muted-foreground font-bold uppercase">Eficiência</p>
+                      <p className="text-sm font-bold text-white">+300%</p>
+                    </div>
+                 </div>
               </div>
             </div>
+
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
+          <span className="text-xs font-bold tracking-widest uppercase">Scroll</span>
+          <div className="w-[1px] h-8 bg-gradient-to-b from-primary to-transparent" />
         </div>
       </section>
 
       {/* 2. Institucional (Social Proof / Credibility) */}
-      <section className="w-full py-16 bg-card border-y border-border">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-8">
-            <div className="text-center space-y-2">
-              <h2 className="text-3xl font-bold tracking-tight">Por que escolher a Great Path?</h2>
-              <p className="text-muted-foreground md:text-lg max-w-2xl">
-                Não somos apenas uma loja. Somos seu parceiro estratégico em transformação digital e automação.
+      <section className="w-full py-24 bg-background relative overflow-hidden border-b border-border">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[100px] pointer-events-none" />
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="flex flex-col items-center justify-center space-y-12">
+            <div className="text-center space-y-4 max-w-3xl">
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white uppercase">
+                Por que <span className="text-primary">Great Path</span>?
+              </h2>
+              <p className="text-muted-foreground text-xl">
+                Não somos apenas uma loja. Somos seu parceiro estratégico em transformação digital e automação avançada.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-8">
-              <div className="flex flex-col items-center text-center p-6 space-y-4">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+              <div className="flex flex-col items-start p-8 rounded-2xl bg-card border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(104,226,47,0.1)] group">
+                <div className="h-16 w-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                   <BrainCircuit size={32} />
                 </div>
-                <h3 className="text-xl font-bold">Tecnologia de Ponta</h3>
-                <p className="text-muted-foreground">Modelos avançados treinados com dados específicos do seu nicho para máxima precisão.</p>
+                <h3 className="text-2xl font-bold mb-3 text-white">Tecnologia de Ponta</h3>
+                <p className="text-muted-foreground text-lg">Modelos avançados treinados com dados específicos do seu nicho para máxima precisão e autonomia.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-6 space-y-4">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="flex flex-col items-start p-8 rounded-2xl bg-card border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(104,226,47,0.1)] group">
+                <div className="h-16 w-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                   <Bot size={32} />
                 </div>
-                <h3 className="text-xl font-bold">Personalização Total</h3>
-                <p className="text-muted-foreground">Assistentes com a voz, tom e conhecimento exato da sua marca e procedimentos.</p>
+                <h3 className="text-2xl font-bold mb-3 text-white">Personalização Total</h3>
+                <p className="text-muted-foreground text-lg">Assistentes com a voz, tom e conhecimento exato da sua marca e procedimentos corporativos.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-6 space-y-4">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="flex flex-col items-start p-8 rounded-2xl bg-card border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(104,226,47,0.1)] group">
+                <div className="h-16 w-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                   <ShieldCheck size={32} />
                 </div>
-                <h3 className="text-xl font-bold">Suporte Consultivo</h3>
-                <p className="text-muted-foreground">Acompanhamento contínuo para garantir que a IA gere ROI real para sua empresa.</p>
+                <h3 className="text-2xl font-bold mb-3 text-white">Suporte Consultivo</h3>
+                <p className="text-muted-foreground text-lg">Acompanhamento contínuo especializado para garantir que a IA gere ROI real e imediato para sua empresa.</p>
               </div>
             </div>
           </div>
@@ -108,45 +144,47 @@ export default function Home() {
       </section>
 
       {/* 3. Grade de Assistentes (Products/Assistants Grid) */}
-      <section id="assistants" className="w-full py-24 bg-background">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Conheça Nossos <span className="text-primary">Especialistas Digitais</span></h2>
-            <p className="text-muted-foreground md:text-lg max-w-2xl">
-              Agentes inteligentes prontos para serem integrados ao seu negócio hoje mesmo.
+      <section id="assistants" className="w-full py-32 bg-card relative overflow-hidden">
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="flex flex-col items-center justify-center space-y-6 text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight uppercase">
+              Nossos <span className="text-primary text-glow">Especialistas</span>
+            </h2>
+            <p className="text-muted-foreground text-xl max-w-2xl">
+              Agentes inteligentes prontos para serem integrados ao seu ecossistema digital.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {assistants.map((bot, i) => (
-              <div key={i} className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 transition-all shadow-sm hover:shadow-primary/5">
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="h-14 w-14 rounded-lg bg-background border border-border flex items-center justify-center overflow-hidden p-1">
-                      <Image src="/avatar.png" alt={bot.name} width={48} height={48} className="object-cover" />
+              <div key={i} className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-primary/20 bg-background hover:border-primary transition-all duration-500 hover:shadow-[0_0_40px_rgba(104,226,47,0.15)] hover:-translate-y-2">
+                <div className="p-8">
+                  <div className="flex justify-between items-start mb-8">
+                    <div className="h-16 w-16 rounded-full bg-card border-2 border-primary/30 flex items-center justify-center overflow-hidden p-1 shadow-[0_0_15px_rgba(104,226,47,0.2)]">
+                      <Image src="/avatar.png" alt={bot.name} width={56} height={56} className="object-cover" />
                     </div>
-                    <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
+                    <span className="inline-flex items-center rounded-full border border-primary/50 bg-primary/10 px-3 py-1 text-sm font-bold text-primary uppercase tracking-wider">
                       {bot.role}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{bot.name}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h3 className="text-3xl font-black mb-4 text-white group-hover:text-primary transition-colors">{bot.name}</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
                     {bot.desc}
                   </p>
                 </div>
-                <div className="p-6 pt-0 mt-auto">
-                  <Button variant="outline" className="w-full border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
-                    Saber mais
+                <div className="p-8 pt-0 mt-auto">
+                  <Button className="w-full h-14 font-bold text-lg bg-card border border-primary/30 text-white hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300">
+                    SABER MAIS
                   </Button>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <Button size="lg" variant="ghost" className="text-primary hover:text-primary hover:bg-primary/10" asChild>
+          <div className="mt-20 text-center">
+            <Button size="lg" variant="ghost" className="text-primary hover:text-primary-foreground hover:bg-primary text-lg font-bold h-16 px-10 rounded-full transition-all duration-300 border border-transparent hover:border-primary shadow-[0_0_15px_rgba(104,226,47,0.1)] hover:shadow-[0_0_30px_rgba(104,226,47,0.4)]" asChild>
               <Link href="/nossos-robos">
-                Ver todos os assistentes <ArrowRight className="ml-2 h-4 w-4" />
+                VER TODOS OS ASSISTENTES <ArrowRight className="ml-3 h-5 w-5" />
               </Link>
             </Button>
           </div>
@@ -154,37 +192,45 @@ export default function Home() {
       </section>
 
       {/* 4. Casos de Uso (Use Cases) */}
-      <section className="w-full py-24 bg-card/50 border-t border-border">
-        <div className="container px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="w-full py-32 bg-background border-t border-b border-border relative overflow-hidden">
+        <div className="absolute left-0 bottom-0 w-1/2 h-1/2 bg-primary/5 blur-[120px] pointer-events-none" />
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Feito para o seu setor</h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                Nossos robôs são adaptáveis a diversos nichos de mercado, resolvendo os gargalos específicos de cada segmento com maestria e velocidade.
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight uppercase mb-8">
+                Feito para o <span className="text-primary">seu setor</span>
+              </h2>
+              <p className="text-muted-foreground text-xl mb-12">
+                Nossos robôs são adaptáveis a diversos nichos de mercado, resolvendo os gargalos específicos de cada segmento com maestria, velocidade e precisão cirúrgica.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {useCases.map((useCase, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="mt-1 flex-shrink-0">
+                  <div key={i} className="flex gap-6 items-start group">
+                    <div className="mt-1 flex-shrink-0 bg-card p-3 rounded-full border border-primary/20 group-hover:border-primary group-hover:shadow-[0_0_15px_rgba(104,226,47,0.3)] transition-all">
                       <CheckCircle2 className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold mb-1">{useCase.title}</h4>
-                      <p className="text-muted-foreground">{useCase.desc}</p>
+                      <h4 className="text-2xl font-bold mb-2 text-white group-hover:text-primary transition-colors">{useCase.title}</h4>
+                      <p className="text-muted-foreground text-lg">{useCase.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden border border-border bg-card p-2 shadow-xl">
-               <div className="aspect-[4/3] rounded-xl bg-background border border-border flex items-center justify-center p-8 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('/avatar.png')] bg-cover bg-center opacity-10 blur-sm" />
-                  <div className="relative z-10 text-center space-y-4">
-                     <Rocket className="h-16 w-16 text-primary mx-auto" />
-                     <h3 className="text-2xl font-bold">Integração Simples</h3>
-                     <p className="text-muted-foreground max-w-sm">
-                       Conectamos nossos assistentes ao WhatsApp, Instagram, Sites e CRMs em questão de dias, não meses.
+
+            <div className="relative rounded-3xl overflow-hidden border border-primary/30 bg-card p-4 shadow-[0_0_40px_rgba(104,226,47,0.1)] group hover:shadow-[0_0_60px_rgba(104,226,47,0.2)] transition-all duration-700">
+               <div className="aspect-[4/3] rounded-2xl bg-background border border-border flex items-center justify-center p-8 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-grid opacity-20" />
+                  <div className="absolute inset-0 bg-[url('/avatar.png')] bg-contain bg-center bg-no-repeat opacity-10 blur-sm scale-150 group-hover:scale-110 transition-transform duration-1000" />
+
+                  <div className="relative z-10 text-center space-y-6">
+                     <div className="mx-auto w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center border border-primary/30 shadow-[0_0_30px_rgba(104,226,47,0.3)] group-hover:scale-110 transition-transform duration-500">
+                        <Rocket className="h-12 w-12 text-primary" />
+                     </div>
+                     <h3 className="text-3xl font-black text-white uppercase tracking-wider">Integração<br/>Expressa</h3>
+                     <p className="text-muted-foreground text-lg max-w-sm mx-auto">
+                       Conectamos nossos assistentes ao seu WhatsApp, Instagram, Sites e CRMs em questão de <span className="text-primary font-bold">dias, não meses</span>.
                      </p>
                   </div>
                </div>
@@ -194,80 +240,89 @@ export default function Home() {
       </section>
 
       {/* 5. Benefícios (Benefits/ROI) */}
-      <section className="w-full py-24 bg-background">
-        <div className="container px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Resultados que você pode medir</h2>
-            <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
-              Implementar IA não é um custo, é o melhor investimento para escalabilidade.
+      <section className="w-full py-32 bg-card relative overflow-hidden">
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight uppercase mb-6">
+              Resultados <span className="text-primary text-glow">Reais</span>
+            </h2>
+            <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
+              Implementar Inteligência Artificial não é um custo, é o melhor e mais rápido investimento para a escalabilidade do seu negócio.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="flex flex-col items-center text-center p-6 border border-border rounded-xl bg-card hover:border-primary/50 transition-colors">
-              <Clock className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-3xl font-bold mb-2 text-foreground">24/7</h3>
-              <p className="text-sm text-muted-foreground">Disponibilidade total sem horas extras ou pausas.</p>
+            <div className="flex flex-col items-center text-center p-8 border border-primary/20 rounded-2xl bg-background hover:border-primary transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(104,226,47,0.15)] group">
+              <Clock className="h-12 w-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-5xl font-black mb-3 text-white">24/7</h3>
+              <p className="text-lg text-muted-foreground">Disponibilidade total sem horas extras.</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 border border-border rounded-xl bg-card hover:border-primary/50 transition-colors">
-              <Zap className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-3xl font-bold mb-2 text-foreground">-60%</h3>
-              <p className="text-sm text-muted-foreground">Redução no tempo médio de resposta (TMA).</p>
+            <div className="flex flex-col items-center text-center p-8 border border-primary/20 rounded-2xl bg-background hover:border-primary transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(104,226,47,0.15)] group">
+              <Zap className="h-12 w-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-5xl font-black mb-3 text-white">-60%</h3>
+              <p className="text-lg text-muted-foreground">Redução no tempo de resposta (TMA).</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 border border-border rounded-xl bg-card hover:border-primary/50 transition-colors">
-              <BrainCircuit className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-3xl font-bold mb-2 text-foreground">+40%</h3>
-              <p className="text-sm text-muted-foreground">Aumento nas taxas de conversão de leads.</p>
+            <div className="flex flex-col items-center text-center p-8 border border-primary/20 rounded-2xl bg-background hover:border-primary transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(104,226,47,0.15)] group">
+              <BrainCircuit className="h-12 w-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-5xl font-black mb-3 text-white">+40%</h3>
+              <p className="text-lg text-muted-foreground">Aumento nas conversões de leads.</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 border border-border rounded-xl bg-card hover:border-primary/50 transition-colors">
-              <Bot className="h-10 w-10 text-primary mb-4" />
-              <h3 className="text-3xl font-bold mb-2 text-foreground">100%</h3>
-              <p className="text-sm text-muted-foreground">Padronização no atendimento e qualidade.</p>
+            <div className="flex flex-col items-center text-center p-8 border border-primary/20 rounded-2xl bg-background hover:border-primary transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(104,226,47,0.15)] group">
+              <Bot className="h-12 w-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-5xl font-black mb-3 text-white">100%</h3>
+              <p className="text-lg text-muted-foreground">Padronização extrema no atendimento.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* 6. CTA Final (Final Call to Action) */}
-      <section className="w-full py-24 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/avatar.png')] bg-cover bg-center opacity-5 mix-blend-overlay" />
+      <section className="w-full py-32 bg-primary relative overflow-hidden">
+        {/* Abstract Background pattern for primary section */}
+        <div className="absolute inset-0 bg-[url('/avatar.png')] bg-cover bg-center opacity-10 mix-blend-overlay scale-150 blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+
         <div className="container px-4 md:px-6 relative z-10 text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl text-primary-foreground mb-6">
-            Pronto para liderar o seu mercado?
+          <h2 className="text-5xl md:text-7xl font-black tracking-tight text-primary-foreground uppercase mb-8 drop-shadow-md">
+            LIDERE O SEU MERCADO
           </h2>
-          <p className="max-w-[700px] mx-auto text-xl text-primary-foreground/80 mb-10">
-            Junte-se a dezenas de empresas que já transformaram suas operações com os agentes de IA da Great Path.
+          <p className="max-w-[800px] mx-auto text-2xl font-medium text-primary-foreground/90 mb-12">
+            Junte-se a dezenas de empresas que já transformaram suas operações com os agentes de IA de alta performance da Great Path.
           </p>
-          <Button size="lg" className="h-14 px-8 text-lg font-bold bg-background text-foreground hover:bg-background/90 hover:scale-105 transition-all shadow-lg" asChild>
-            <Link href="/contato">Agendar Consultoria Gratuita</Link>
+          <Button size="lg" className="h-20 px-12 text-xl font-black bg-background text-foreground hover:bg-background/90 hover:scale-105 transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-full uppercase tracking-wider" asChild>
+            <Link href="/contato">AGENDAR CONSULTORIA ESTRATÉGICA</Link>
           </Button>
         </div>
       </section>
 
       {/* 7. Formulário Mockup (Newsletter / Contact in Footer-ish area) */}
-      <section id="contact" className="w-full py-16 bg-card border-t border-border">
-        <div className="container px-4 md:px-6 max-w-3xl">
-          <div className="bg-background border border-border rounded-2xl p-8 md:p-12 shadow-xl text-center">
-            <Mail className="h-12 w-12 text-primary mx-auto mb-6" />
-            <h2 className="text-2xl font-bold mb-4">Fique por dentro das inovações</h2>
-            <p className="text-muted-foreground mb-8">
-              Assine nossa newsletter ou solicite um contato comercial para receber insights exclusivos sobre IA para negócios.
-            </p>
+      <section id="contact" className="w-full py-24 bg-background border-t border-border">
+        <div className="container px-4 md:px-6 max-w-4xl">
+          <div className="bg-card border border-primary/30 rounded-3xl p-10 md:p-16 shadow-[0_0_50px_rgba(104,226,47,0.05)] text-center relative overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[50px] pointer-events-none" />
 
-            <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-              <input
-                type="email"
-                placeholder="Seu melhor e-mail corporativo"
-                className="flex h-12 w-full rounded-md border border-input bg-background px-4 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1"
-                required
-              />
-              <Button type="button" className="h-12 px-8 font-bold text-primary-foreground">
-                Inscrever-se
-              </Button>
+            <div className="relative z-10">
+              <Mail className="h-16 w-16 text-primary mx-auto mb-8" />
+              <h2 className="text-4xl font-black uppercase mb-6 text-white">Domine a Inovação</h2>
+              <p className="text-muted-foreground text-xl mb-12 max-w-2xl mx-auto">
+                Assine nossa newsletter VIP ou solicite contato para receber insights táticos exclusivos sobre IA aplicada a negócios.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+                <input
+                  type="email"
+                  placeholder="SEU MELHOR E-MAIL CORPORATIVO"
+                  className="flex h-16 w-full rounded-full border border-primary/30 bg-background px-8 py-2 text-sm md:text-base font-bold tracking-wide ring-offset-background placeholder:text-muted-foreground/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex-1 transition-all"
+                  required
+                />
+                <Button type="button" className="h-16 px-10 font-black text-lg text-primary-foreground rounded-full hover:scale-105 transition-transform shadow-[0_0_15px_rgba(104,226,47,0.3)]">
+                  INSCREVER-SE
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mt-8">
+                Ao se inscrever, você concorda com nossos <span className="text-primary cursor-pointer hover:underline">Termos de Serviço</span> e <span className="text-primary cursor-pointer hover:underline">Política de Privacidade</span>.
+              </p>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">
-              Ao se inscrever, você concorda com nossos Termos de Serviço e Política de Privacidade.
-            </p>
           </div>
         </div>
       </section>
