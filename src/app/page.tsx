@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Bot, BrainCircuit, Rocket, Zap, Clock, ShieldCheck, Mail, ArrowRight } from "lucide-react";
-import ShaderBackground from "@/components/ui/shader-background";
 
 export default function Home() {
   const assistants = [
@@ -11,7 +10,10 @@ export default function Home() {
     { name: "Nexus", role: "Análise de Dados", desc: "Extrai insights e gera relatórios em tempo real." },
     { name: "Orion", role: "Vendas e Conversão", desc: "Guia clientes pelo funil e fecha vendas ativamente." },
     { name: "Lyra", role: "Recursos Humanos", desc: "Faz triagem de currículos e onboarding de novos funcionários." },
-    { name: "Vega", role: "Gestão Financeira", desc: "Automatiza cobranças e monitora métricas do negócio." }
+    { name: "Vega", role: "Gestão Financeira", desc: "Automatiza cobranças e monitora métricas do negócio." },
+    { name: "Ares", role: "Marketing Digital", desc: "Criação de campanhas, segmentação e otimização de tráfego pago." },
+    { name: "Hermes", role: "Logística", desc: "Rastreio de entregas e otimização de rotas e fretes." },
+    { name: "Themis", role: "Jurídico", desc: "Análise prévia de contratos e organização de documentos." }
   ];
 
   const useCases = [
@@ -24,9 +26,7 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 bg-background text-foreground overflow-x-hidden">
       {/* 1. Hero Section - Futuristic & High Impact */}
-      <section className="w-full min-h-screen py-16 md:py-32 relative overflow-hidden flex items-center justify-center border-b border-primary/20">
-        <ShaderBackground />
-
+      <section className="w-full min-h-screen py-16 md:py-32 bg-grid relative overflow-hidden flex items-center justify-center border-b border-primary/20">
         {/* Glow Effects */}
         <div className="absolute top-[20%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute top-[80%] left-[20%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
@@ -160,23 +160,23 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {assistants.map((bot, i) => (
-              <div key={i} className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-primary/20 bg-background hover:border-primary transition-all duration-500 hover:shadow-[0_0_40px_rgba(104,226,47,0.15)] hover:-translate-y-2">
+              <div key={i} className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-primary hover:shadow-[0_0_30px_rgba(104,226,47,0.4)] hover:-translate-y-2">
                 <div className="p-8">
                   <div className="flex justify-between items-start mb-8">
-                    <div className="h-16 w-16 rounded-full bg-card border-2 border-primary/30 flex items-center justify-center overflow-hidden p-1 shadow-[0_0_15px_rgba(104,226,47,0.2)]">
-                      <Image src="/avatar.png" alt={bot.name} width={56} height={56} className="object-cover" />
+                    <div className="h-24 w-24 rounded-full bg-black/40 border-2 border-primary/50 flex items-center justify-center overflow-hidden p-2 shadow-[0_0_20px_rgba(104,226,47,0.3)] group-hover:shadow-[0_0_30px_rgba(104,226,47,0.6)] transition-all duration-500">
+                      <Image src="/robo_hero.webp" alt={bot.name} width={80} height={80} className="object-contain" />
                     </div>
-                    <span className="inline-flex items-center rounded-full border border-primary/50 bg-primary/10 px-3 py-1 text-sm font-bold text-primary uppercase tracking-wider">
+                    <span className="inline-flex items-center rounded-full border border-primary/50 bg-primary/20 px-3 py-1 text-sm font-bold text-primary uppercase tracking-wider shadow-[0_0_10px_rgba(104,226,47,0.2)]">
                       {bot.role}
                     </span>
                   </div>
-                  <h3 className="text-3xl font-black mb-4 text-white group-hover:text-primary transition-colors">{bot.name}</h3>
+                  <h3 className="text-3xl font-black mb-4 text-white group-hover:text-primary transition-colors duration-300">{bot.name}</h3>
                   <p className="text-muted-foreground text-lg leading-relaxed">
                     {bot.desc}
                   </p>
                 </div>
                 <div className="p-8 pt-0 mt-auto">
-                  <Button className="w-full h-14 font-bold text-lg bg-card border border-primary/30 text-white hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300">
+                  <Button className="w-full h-14 font-bold text-lg bg-primary text-primary-foreground border border-transparent shadow-[0_0_15px_rgba(104,226,47,0.3)] hover:bg-primary/90 hover:shadow-[0_0_25px_rgba(104,226,47,0.5)] transition-all duration-300">
                     SABER MAIS
                   </Button>
                 </div>
