@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Bot, BrainCircuit, Rocket, Zap, Clock, ShieldCheck, Mail, ArrowRight } from "lucide-react";
+import ShaderBackground from "@/components/ui/shader-background";
 
 export default function Home() {
   const assistants = [
@@ -23,7 +24,9 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 bg-background text-foreground overflow-x-hidden">
       {/* 1. Hero Section - Futuristic & High Impact */}
-      <section className="w-full min-h-screen py-16 md:py-32 bg-grid relative overflow-hidden flex items-center justify-center border-b border-primary/20">
+      <section className="w-full min-h-screen py-16 md:py-32 relative overflow-hidden flex items-center justify-center border-b border-primary/20">
+        <ShaderBackground />
+
         {/* Glow Effects */}
         <div className="absolute top-[20%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute top-[80%] left-[20%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
