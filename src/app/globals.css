@@ -12,29 +12,29 @@
 
 :root {
   /* Default to Dark Mode */
-  --background: #020427; /* Azul/cinza escuro */
+  --background: #111111; /* Cinza chumbo opaco */
   --foreground: #ffffff; /* Branco */
 
   --primary: #68e22f; /* Verde neon */
-  --primary-foreground: #020427;
+  --primary-foreground: #111111;
 
-  --muted: #1e2142;
-  --muted-foreground: #a0a3bd;
+  --muted: #222222;
+  --muted-foreground: #a3a3a3;
 
-  --card: #0d1033;
+  --card: #1a1a1a;
   --card-foreground: #ffffff;
 
-  --popover: #0d1033;
+  --popover: #1a1a1a;
   --popover-foreground: #ffffff;
 
-  --border: #2a2e5d;
-  --input: #2a2e5d;
+  --border: #333333;
+  --input: #333333;
   --ring: #68e22f;
 
-  --secondary: #1e2142;
+  --secondary: #222222;
   --secondary-foreground: #ffffff;
 
-  --accent: #1e2142;
+  --accent: #222222;
   --accent-foreground: #ffffff;
 
   --destructive: #ef4444;
@@ -45,29 +45,29 @@
 
 /* Ensure dark mode class has the same values because we are forcing dark theme */
 .dark {
-  --background: #020427; /* Azul/cinza escuro */
+  --background: #111111; /* Cinza chumbo opaco */
   --foreground: #ffffff; /* Branco */
 
   --primary: #68e22f; /* Verde neon */
-  --primary-foreground: #020427;
+  --primary-foreground: #111111;
 
-  --muted: #1e2142;
-  --muted-foreground: #a0a3bd;
+  --muted: #222222;
+  --muted-foreground: #a3a3a3;
 
-  --card: #0d1033;
+  --card: #1a1a1a;
   --card-foreground: #ffffff;
 
-  --popover: #0d1033;
+  --popover: #1a1a1a;
   --popover-foreground: #ffffff;
 
-  --border: #2a2e5d;
-  --input: #2a2e5d;
+  --border: #333333;
+  --input: #333333;
   --ring: #68e22f;
 
-  --secondary: #1e2142;
+  --secondary: #222222;
   --secondary-foreground: #ffffff;
 
-  --accent: #1e2142;
+  --accent: #222222;
   --accent-foreground: #ffffff;
 
   --destructive: #ef4444;
