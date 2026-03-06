@@ -51,10 +51,8 @@ export function Header() {
             <NavigationMenuList className="space-x-2">
               {links.map((link) => (
                 <NavigationMenuItem key={link.href}>
-                  <Link href={link.href} legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      {link.name}
-                    </NavigationMenuLink>
+                  <Link href={link.href} className={navigationMenuTriggerStyle()}>
+                    {link.name}
                   </Link>
                 </NavigationMenuItem>
               ))}
@@ -120,5 +118,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

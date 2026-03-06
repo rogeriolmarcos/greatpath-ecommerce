@@ -122,6 +122,9 @@ body {
 }
 
 @layer utilities {
+  .container {
+    @apply mx-auto px-4 w-full max-w-7xl;
+  }
   .text-glow {
     text-shadow: 0 0 15px rgba(104, 226, 47, 0.6), 0 0 30px rgba(104, 226, 47, 0.3);
   }
