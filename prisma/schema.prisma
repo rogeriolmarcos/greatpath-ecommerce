@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String      @id @default(cuid())
+  name          String
+  email         String      @unique
+  password      String      // bcrypt hash
+  createdAt     DateTime    @default(now())
+  agents        UserAgent[]
+  conversations Conversation[]
+  notifications Notification[]
+  integrations  Integration[]
+  calculations  PricingCalc[]
+}
+
+model Agent {
+  id           String      @id @default(cuid())
+  name         String
+  role         String
+  area         String
+  systemPrompt String      @db.Text  // nunca exposto ao frontend
+  modules      Json        // lista de módulos ativos por agente
+  users        UserAgent[]
+}
+
+model UserAgent {
+  userId      String
+  agentId     String
+  purchasedAt DateTime  @default(now())
+  isActive    Boolean   @default(true)
+  user        User      @relation(fields:[userId], references:[id])
+  agent       Agent     @relation(fields:[agentId], references:[id])
+  @@id([userId, agentId])
+}
+
+model Conversation {
+  id        String    @id @default(cuid())
+  userId    String
+  agentId   String
+  messages  Json      // array de {role, content, timestamp}
+  createdAt DateTime  @default(now())
+  user      User      @relation(fields:[userId], references:[id])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  agentId   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields:[userId], references:[id])
+}
+
+model Integration {
+  id          String   @id @default(cuid())
+  userId      String
+  agentId     String
+  type        String   // "google_calendar" | "gmail" | "whatsapp" | "google_sheets"
+  accessToken String   @db.Text  // criptografado
+  config      Json     // mensagem de alerta padrão e configurações
+  isConnected Boolean  @default(false)
+  user        User     @relation(fields:[userId], references:[id])
+}
+
+model PricingCalc {
+  id        String   @id @default(cuid())
+  userId    String
+  agentId   String
+  inputs    Json     // campos preenchidos
+  result    Json     // preço sugerido, margem, ponto de equilíbrio
+  createdAt DateTime @default(now())
+  user      User     @relation(fields:[userId], references:[id])
+}
